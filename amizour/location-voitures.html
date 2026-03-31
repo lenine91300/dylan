@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Location de Voitures — Dylan Arezki</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: #0f172a; height: 100vh; overflow: hidden; }
+        #app-root { width: 100vw; height: 100vh; }
+        #app-root > .japp { height: 100vh; }
+    </style>
+</head>
+<body>
+    <div id="app-root"></div>
+    <script src="app-location.js"></script>
+    <script>
+        document.getElementById('app-root').innerHTML = buildLocationApp();
+    </script>
+</body>
+</html>

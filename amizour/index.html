@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vice Portfolio — Dylan Arezki</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="ui">
+
+    <!-- HUD -->
+    <div id="hud">
+        <div id="hud-left">
+            <div class="hud-name">DYLAN AREZKI</div>
+            <div class="hud-role">BTS SIO · SLAM</div>
+        </div>
+        <div id="hud-center">
+            <div id="zone-label"></div>
+        </div>
+        <div id="hud-right">
+            <span class="ctrl"><kbd>↑↓←→</kbd> Déplacer</span>
+            <span class="ctrl"><kbd>Entrée</kbd> Interagir &nbsp;<kbd>0</kbd> Menu</span>
+        </div>
+    </div>
+
+    <!-- Minimap -->
+    <div id="minimap">
+        <canvas id="mm-canvas" width="200" height="200"></canvas>
+        <div id="mm-label">VICE PORTFOLIO</div>
+    </div>
+
+    <!-- Prompt d'interaction -->
+    <div id="interact-prompt" class="hidden">
+        <span class="key-badge">Entrée</span> Interagir
+    </div>
+
+    <!-- Fenêtre de dialogue -->
+    <div id="dialog-box" class="hidden">
+        <div id="dlg-header">
+            <div id="dlg-speaker-area">
+                <span id="dlg-portrait"></span>
+                <span id="dlg-speaker"></span>
+            </div>
+            <button id="dlg-close">✕</button>
+        </div>
+        <div id="dlg-title"></div>
+        <div id="dlg-content"></div>
+        <div id="dlg-nav" class="hidden">
+            <button id="prev-btn">◀ Précédent</button>
+            <span id="page-ind"></span>
+            <button id="next-btn">Suivant ▶</button>
+        </div>
+        <div id="dlg-hint">[ Entrée ] Continuer &nbsp;&nbsp; [ ESC ] Fermer</div>
+    </div>
+
+    <!-- Terminal Projo Java -->
+    <div id="terminal-modal" class="hidden">
+        <div id="terminal-window">
+            <div id="terminal-titlebar">
+                <span id="terminal-dots">
+                    <span class="tdot tdot-r"></span>
+                    <span class="tdot tdot-y"></span>
+                    <span class="tdot tdot-g"></span>
+                </span>
+                <span id="terminal-title">Terminal — Vice Portfolio</span>
+                <button id="terminal-close" onclick="closeTerminal()">✕</button>
+            </div>
+            <div id="terminal-body"></div>
+            <div id="java-display" class="hidden"></div>
+            <div id="terminal-footer">
+                <span class="term-cursor">█</span>
+                <span style="margin-left:12px;color:#555">[ ESC ] Fermer le terminal</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Menu principal (touche 0) -->
+    <div id="main-menu" class="hidden">
+        <div class="menu-logo">VICE<br>PORTFOLIO</div>
+        <div class="menu-by">Dylan Arezki — BTS SIO SLAM</div>
+        <div id="menu-stats">
+            <div class="stat"><span class="sn">7</span><span class="sl">Projets</span></div>
+            <div class="stat"><span class="sn">5</span><span class="sl">Professeurs</span></div>
+            <div class="stat"><span class="sn">6+</span><span class="sl">Technologies</span></div>
+        </div>
+        <div class="menu-skills">
+            <span class="sk">HTML5</span><span class="sk">CSS3</span>
+            <span class="sk">JavaScript</span><span class="sk">PHP</span>
+            <span class="sk">MySQL</span><span class="sk">Java</span>
+        </div>
+        <button id="menu-close">🎮 Retour au jeu</button>
+    </div>
+
+    <!-- Écran d'introduction -->
+    <div id="intro-screen">
+        <div id="intro-box">
+            <div class="intro-logo">VICE<br>PORTFOLIO</div>
+            <div class="intro-subtitle">Portfolio Interactif · Dylan Arezki</div>
+            <div id="intro-dlg">
+                <span class="intro-portrait">👨‍🏫</span>
+                <div class="intro-txt">
+                    <span class="intro-spkr">Prof. Martin :</span><br>
+                    "Bienvenue à Vice City ! Je suis Prof. Martin, ton guide dans ce portfolio.
+                    Explore la ville, parle aux professeurs et découvre les projets réalisés
+                    pendant le BTS SIO SLAM."
+                </div>
+            </div>
+            <button id="start-btn">🎮 Commencer l'exploration</button>
+            <div class="ctrl-grid">
+                <div class="cg"><kbd>↑</kbd> Avancer</div>
+                <div class="cg"><kbd>↓</kbd> Reculer</div>
+                <div class="cg"><kbd>←</kbd> Gauche</div>
+                <div class="cg"><kbd>→</kbd> Droite</div>
+                <div class="cg"><kbd>Entrée</kbd> Interagir</div>
+                <div class="cg"><kbd>0</kbd> Menu</div>
+                <div class="cg"><kbd>Shift</kbd> Courir</div>
+                <div class="cg"><kbd>ESC</kbd> Fermer dialogue</div>
+            </div>
+        </div>
+    </div>
+
+</div><!-- fin #ui -->
+
+<canvas id="game-canvas"></canvas>
+
+<script src="https://cjrtnc.leaningtech.com/4.2/cj.js"></script>
+<script src="data.js"></script>
+<script src="java-app.js"></script>
+<script src="app-location.js"></script>
+<script src="app-resa.js"></script>
+<script src="app-zoo.js"></script>
+<script src="game.js"></script>
+</body>
+</html>

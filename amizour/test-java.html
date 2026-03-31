@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Test Java App</title>
+<link rel="stylesheet" href="style.css">
+<style>
+body { margin: 0; background: #000; }
+#wrap { width: 100vw; height: 100vh; display: flex; flex-direction: column; overflow: hidden; }
+</style>
+</head>
+<body>
+<div id="wrap">
+  <div id="java-display" style="flex:1;overflow:hidden;background:#000;"></div>
+</div>
+<script src="data.js"></script>
+<script src="java-app.js"></script>
+<script>
+  document.getElementById('java-display').innerHTML = buildJavaApp();
+</script>
+</body>
+</html>

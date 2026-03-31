@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Veille Technologique — MMA</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #0f0f13;
+      color: #999;
+      font-family: 'Inter', sans-serif;
+      font-size: 14.5px;
+      line-height: 1.85;
+      max-width: 660px;
+      margin: 0 auto;
+      padding: 48px 22px 80px;
+    }
+    a { color: #e63946; text-decoration: underline; text-underline-offset: 3px; }
+    a:hover { color: #ff6b75; }
+    strong { color: #ccc; font-weight: 600; }
+    hr { border: none; border-top: 1px solid #1a1a22; margin: 36px 0; }
+    p { margin-bottom: 10px; font-size: 14px; color: #888; }
+    p:last-child { margin-bottom: 0; }
+
+    .chip { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: #e63946; border: 1px solid rgba(230,57,70,0.3); padding: 3px 10px; border-radius: 4px; display: inline-block; margin-bottom: 12px; }
+    h1 { font-size: 1.6rem; font-weight: 700; color: #fff; margin-bottom: 4px; }
+    .meta { font-size: 12px; color: #333; margin-top: 6px; margin-bottom: 40px; }
+
+    .label { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: #e63946; display: block; margin-bottom: 7px; }
+    .section { margin-bottom: 36px; }
+
+    /* PROBLO */
+    .problo { border-left: 3px solid #e63946; padding: 13px 18px; background: #141418; border-radius: 0 6px 6px 0; font-style: italic; color: #aaa; font-size: 14.5px; }
+
+    /* MOTS-CLÉS */
+    .kw-list { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 10px; }
+    .kw { background: #141418; border: 1px solid #1e1e26; border-radius: 5px; padding: 4px 12px; font-size: 13px; color: #777; font-family: monospace; }
+
+    /* ÉTAPE */
+    .step { margin-bottom: 0; }
+    .step-title { font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #e63946; margin-bottom: 10px; display: block; }
+
+    /* BLOC */
+    .bloc { background: #141418; border: 1px solid #1e1e26; border-radius: 8px; padding: 16px 20px; margin-bottom: 10px; }
+    .bloc .tag { font-size: 9px; letter-spacing: 1px; text-transform: uppercase; background: #e63946; color: #fff; padding: 2px 7px; border-radius: 3px; display: inline-block; margin-bottom: 8px; }
+    .bloc .tag.blue { background: #1e4d8c; }
+    .bloc .tag.green { background: #1a6640; }
+    .bloc p { font-size: 13.5px; color: #777; margin: 0; }
+
+    /* STAT INLINE */
+    .stats { display: flex; flex-wrap: wrap; gap: 7px; margin: 8px 0 0; }
+    .stat { background: #0f0f13; border: 1px solid #1e1e26; border-radius: 4px; padding: 4px 10px; font-size: 12.5px; color: #666; }
+    .stat b { color: #e63946; }
+
+    /* LIENS */
+    .liens { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+    .liens a { font-size: 11.5px; color: #e63946; background: rgba(230,57,70,0.07); border: 1px solid rgba(230,57,70,0.2); padding: 3px 8px; border-radius: 4px; text-decoration: none; }
+    .liens a:hover { background: rgba(230,57,70,0.14); }
+    .liens a::before { content: '↗ '; }
+
+    /* LEGAL */
+    .legal { background: rgba(74,222,128,0.04); border: 1px solid rgba(74,222,128,0.15); border-left: 3px solid #4ade80; border-radius: 0 7px 7px 0; padding: 14px 18px; margin-bottom: 10px; }
+    .legal p { font-size: 13.5px; color: #777; margin: 0; }
+
+    /* ACTU */
+    .actu { background: rgba(244,168,23,0.05); border: 1px solid rgba(244,168,23,0.15); border-radius: 7px; padding: 14px 18px; }
+    .actu b { color: #f4a817; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; display: block; margin-bottom: 7px; }
+    .actu p { font-size: 13.5px; color: #888; margin: 0; }
+
+    /* TABLE */
+    table { width: 100%; border-collapse: collapse; font-size: 12.5px; margin-top: 12px; }
+    th { background: #141418; padding: 7px 10px; text-align: left; font-size: 10px; letter-spacing: 1px; text-transform: uppercase; color: #444; border-bottom: 1px solid #1e1e26; }
+    td { padding: 7px 10px; border-bottom: 1px solid #161620; color: #555; vertical-align: top; }
+    td a { color: #e63946; }
+
+    /* SEPARATEUR D'ÉTAPE */
+    .step-sep { border: none; border-top: 1px dashed #1e1e26; margin: 20px 0; }
+  </style>
+</head>
+<body>
+
+  <div class="chip">BTS SIO SLAM — Veille Technologique</div>
+  <h1>Technologies dans le MMA</h1>
+  <p style="color:#444;font-size:13px">IA · capteurs · données · légalité</p>
+  <p class="meta">Dylan Arezki · BTS SIO SLAM · 2025–2026</p>
+
+  <!-- PROBLÉMATIQUE -->
+  <div class="section">
+    <span class="label">Problématique</span>
+    <div class="problo">« Pourquoi collecte-t-on des données sur les combattants dans le MMA, à quoi servent-elles précisément, comment sont-elles stockées, et a-t-on le droit d'utiliser celles de l'adversaire ? »</div>
+  </div>
+
+  <!-- MÉTHODE -->
+  <div class="section">
+    <span class="label">Méthode de veille — mots-clés utilisés</span>
+    <p style="font-size:13.5px">Pour trouver les informations sur ce sujet, voici les mots-clés que j'ai utilisés sur Google Scholar, PubMed, et Google :</p>
+    <div class="kw-list">
+      <span class="kw">"MMA AI"</span>
+      <span class="kw">"UFC data analytics"</span>
+      <span class="kw">"combat sports wearable technology"</span>
+      <span class="kw">"MMA artificial intelligence"</span>
+      <span class="kw">"UFC machine learning"</span>
+      <span class="kw">"combat sports injury prevention sensors"</span>
+      <span class="kw">"MMA virtual reality training"</span>
+      <span class="kw">"Jabbr AI MMA"</span>
+    </div>
+    <p style="margin-top:12px;font-size:13px;color:#555">Alertes Google Alerts configurées sur ces termes pour recevoir les nouvelles automatiquement. Feedly pour suivre EU-Startups, Frontiers Journals et TechCrunch.</p>
+  </div>
+
+  <hr>
+
+  <!-- ÉTAPE 1 -->
+  <div class="section">
+    <span class="step-title">I — Pourquoi utilise-t-on ces données ?</span>
+
+    <div class="bloc">
+      <span class="tag">Objectif</span>
+      <p>Avant la technologie, l'analyse d'un combattant reposait sur le jugement du coach — subjectif et impossible à quantifier. Les données permettent de savoir exactement à quel moment un combattant se fatigue, quels enchaînements provoquent des blessures, et comment il réagit sous pression. Ce qui était une impression devient un fait mesurable.</p>
+    </div>
+
+    <div class="bloc">
+      <span class="tag">Préparation du combat</span>
+      <p>Les données servent aussi à préparer des stratégies contre un adversaire précis. Des plateformes comme <a href="https://statsfight.com/analytics/" target="_blank">StatsFight</a> et <a href="https://mma.social/stats/" target="_blank">MMA.Social</a> permettent d'accéder aux statistiques de n'importe quel combattant UFC : nombre de frappes, taux de takedown, tendances par round. Les algorithmes vont encore plus loin en détectant des schémas invisibles à l'œil humain.</p>
+      <div class="liens">
+        <a href="https://mma.social/stats/" target="_blank">MMA.Social Stats</a>
+        <a href="https://statsfight.com/analytics/" target="_blank">StatsFight Analytics</a>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- ÉTAPE 2 -->
+  <div class="section">
+    <span class="step-title">II — Quelles données précisément ?</span>
+
+    <div class="bloc">
+      <span class="tag">Capteurs connectés</span>
+      <p>Des gants comme <strong>FightCamp</strong> intègrent des capteurs <strong>IMU</strong> (Inertial Measurement Unit) qui mesurent en temps réel la vitesse, la puissance et le volume de chaque frappe. Des patches biométriques suivent la fréquence cardiaque (HRV), la température corporelle et la fatigue musculaire tout au long de la séance.</p>
+      <div class="stats">
+        <div class="stat"><b>89%</b> précision détection mouvements à risque</div>
+        <div class="stat"><b>1,39 Md$</b> marché capteurs MMA 2024</div>
+      </div>
+      <div class="liens">
+        <a href="https://www.sciencedirect.com/science/article/pii/S2665917424000308" target="_blank">ScienceDirect 2024</a>
+        <a href="https://www.frontiersin.org/journals/bioengineering-and-biotechnology/articles/10.3389/fbioe.2025.1663592/full" target="_blank">Frontiers Bioengineering 2025</a>
+        <a href="https://wholesale.rdxsports.com/blog/stay-ahead-of-the-curve-smart-wearable-tech-for-the-modern-mma-retailer/" target="_blank">RDX Sports</a>
+      </div>
+    </div>
+
+    <div class="bloc">
+      <span class="tag blue">Données vidéo et statistiques</span>
+      <p>Jabbr.ai analyse les vidéos de combat pour en extraire <strong>50 paramètres</strong> automatiquement : frappes par type (jab, kick, coude), footwork, pression exercée, tentatives de soumission, temps de contrôle au sol, score en direct. L'Université Carnegie Mellon a utilisé des datasets publics UFC couvrant <strong>1996 à 2024</strong> pour modéliser des prédictions de résultats par machine learning — avec 68% de précision, contre 58% pour les experts humains.</p>
+      <div class="liens">
+        <a href="https://jabbr.ai/" target="_blank">jabbr.ai — DeepStrike</a>
+        <a href="https://www.stat.cmu.edu/capstoneresearch/fall2024/315files_f24/team11.html" target="_blank">Carnegie Mellon 2024</a>
+        <a href="https://dl.acm.org/doi/fullHtml/10.1145/3696952.3696966" target="_blank">ACM — UFC Prediction 2024</a>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- ÉTAPE 3 -->
+  <div class="section">
+    <span class="step-title">III — Comment ces données sont-elles stockées ?</span>
+
+    <div class="bloc">
+      <span class="tag blue">UFC × IBM watsonx — Nov. 2024</span>
+      <p>Depuis le <strong>14 novembre 2024</strong>, la UFC utilise officiellement IBM watsonx pour centraliser et analyser ses données. La plateforme stocke <strong>13,2 millions de points de données</strong> issus de plus de 20 ans de combats sur 2 400+ combattants. Elle génère automatiquement des analyses de tendances et des projections pré-combat. En <strong>2025</strong>, elle alimente aussi des alertes en direct pendant les diffusions TV.</p>
+      <div class="stats">
+        <div class="stat"><b>13,2M</b> points de données</div>
+        <div class="stat"><b>2 400+</b> combattants</div>
+        <div class="stat"><b>−40%</b> temps d'analyse</div>
+      </div>
+      <div class="liens">
+        <a href="https://newsroom.ibm.com/2024-11-14-ufc-names-ibm-as-first-ever-official-ai-partner" target="_blank">IBM Newsroom nov. 2024</a>
+        <a href="https://www.prnewswire.com/news-releases/unanimous-decision-ufc-and-ibm-introduce-new-ai-driven-in-fight-insights-302615958.html" target="_blank">In-Fight Insights 2025</a>
+        <a href="https://www.ibm.com/think/news/ufc-fan-experience-watsonx-ai" target="_blank">IBM Think</a>
+      </div>
+    </div>
+
+    <div class="bloc">
+      <span class="tag blue">Jabbr.ai — Dashboard coach</span>
+      <p>Les données vidéo analysées par DeepStrike sont restituées directement aux coachs sous forme de dashboard interactif. Fondée en <strong>2022</strong> à Copenhague, Jabbr.ai a levé <strong>685 000€ en août 2023</strong>, puis <strong>4,3M€ en octobre 2025</strong> — avec le co-fondateur de Reddit parmi les investisseurs.</p>
+      <div class="liens">
+        <a href="https://www.eu-startups.com/2025/10/backed-by-reddit-and-and-lyft-founders-danish-startup-jabbr-ai-raises-e4-3-million-to-bring-transparency-to-combat-sports/" target="_blank">EU-Startups oct. 2025</a>
+        <a href="https://arcticstartup.com/jabbr-raises-e685k/" target="_blank">ArcticStartup août 2023</a>
+      </div>
+    </div>
+
+    <p style="font-size:13px;color:#555">Limite : les données biométriques (santé, corps) sont soumises au <strong>RGPD</strong>. On ne peut pas collecter et exploiter les données d'un combattant sans son consentement. Les données issues des combats publics sont libres d'utilisation.</p>
+  </div>
+
+  <hr>
+
+  <!-- ÉTAPE 4 -->
+  <div class="section">
+    <span class="step-title">IV — Peut-on utiliser les données de l'adversaire ?</span>
+
+    <div class="legal">
+      <p><strong style="color:#4ade80">Oui — 100% légal.</strong> Les <a href="https://www.ufc.com/unified-rules-mixed-martial-arts" target="_blank">règles officielles UFC</a> ne contiennent aucune restriction sur l'utilisation des données adverses. Ces règles concernent uniquement la conduite dans la cage. Toutes les données utilisées sont publiques : combats diffusés, statistiques sur UFC.com, datasets ouverts. C'est l'équivalent d'étudier les vidéos d'une équipe adverse au foot — c'est même considéré comme du professionnalisme dans le milieu.</p>
+    </div>
+
+    <div class="bloc">
+      <span class="tag green">Réalité virtuelle — aller plus loin</span>
+      <p>On peut même recréer virtuellement le style de l'adversaire pour s'entraîner contre lui. Une étude <em>Frontiers in Psychology</em> (<a href="https://pubmed.ncbi.nlm.nih.gov/40110089/" target="_blank">PubMed, mars 2025</a>, 13 travaux analysés) montre que la VR peut <strong>dépasser l'efficacité de l'entraînement classique</strong>. Le combattant UFC <a href="https://www.vrfitnessinsider.com/mma-star-uses-vr-to-train-for-real-fights/" target="_blank">Misha Cirkunov</a> l'utilise pour simuler la pression d'un vrai combat.</p>
+      <div class="liens">
+        <a href="https://pubmed.ncbi.nlm.nih.gov/40110089/" target="_blank">PubMed mars 2025</a>
+        <a href="https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2025.1563212/full" target="_blank">Frontiers Psychology 2025</a>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- CONCLUSION -->
+  <div class="section">
+    <span class="step-title">V — Conclusion</span>
+
+    <div class="actu">
+      <b>🗞 UFC 319 — Août 2025</b>
+      <p>Chimaev domine du Plessis : takedown en <strong>7 secondes</strong>, <strong>529 frappes</strong>, <strong>12 takedowns sur 17 tentatives</strong>, décision unanime <strong>50-44</strong>. Depuis, du Plessis étudie les images de sa défaite deux fois par semaine à la main — stylo et papier. Ce que DeepStrike de Jabbr.ai ferait automatiquement en quelques secondes : 50 paramètres extraits, score séquence par séquence. Ces outils ne sont pas l'avenir. Ils sont déjà là.</p>
+      <div class="liens" style="margin-top:8px">
+        <a href="https://www.ufc.com/news/main-card-results-highlights-winner-interviews-ufc-319-du-plessis-vs-chimaev-chicago" target="_blank">UFC.com — UFC 319</a>
+        <a href="https://themaclife.com/sports/mma/former-champ-studies-chimaev-loss-twice-a-week-as-he-plots-return/" target="_blank">The Mac Life — Du Plessis</a>
+        <a href="https://mmamodel.ai/mma/khamzat-chimaev-ufc-319-training-camp/" target="_blank">MMA Analytics — Chimaev</a>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- SOURCES -->
+  <div class="section">
+    <span class="label">Sources (25)</span>
+    <table>
+      <thead><tr><th>#</th><th>Titre</th><th>Date</th><th>Lien</th></tr></thead>
+      <tbody>
+        <tr><td>01</td><td>UFC 319 — Du Plessis vs Chimaev résultats</td><td>Août 2025</td><td><a href="https://www.ufc.com/news/main-card-results-highlights-winner-interviews-ufc-319-du-plessis-vs-chimaev-chicago" target="_blank">UFC.com</a></td></tr>
+        <tr><td>02</td><td>Du Plessis studies Chimaev loss twice a week</td><td>2025</td><td><a href="https://themaclife.com/sports/mma/former-champ-studies-chimaev-loss-twice-a-week-as-he-plots-return/" target="_blank">The Mac Life</a></td></tr>
+        <tr><td>03</td><td>Chimaev UFC 319 Training Camp — AI Analysis</td><td>2025</td><td><a href="https://mmamodel.ai/mma/khamzat-chimaev-ufc-319-training-camp/" target="_blank">MMA Analytics</a></td></tr>
+        <tr><td>04</td><td>UFC Names IBM as First-Ever Official AI Partner</td><td>Nov. 2024</td><td><a href="https://newsroom.ibm.com/2024-11-14-ufc-names-ibm-as-first-ever-official-ai-partner" target="_blank">IBM Newsroom</a></td></tr>
+        <tr><td>05</td><td>UFC and IBM — In-Fight Insights</td><td>2025</td><td><a href="https://www.prnewswire.com/news-releases/unanimous-decision-ufc-and-ibm-introduce-new-ai-driven-in-fight-insights-302615958.html" target="_blank">PR Newswire</a></td></tr>
+        <tr><td>06</td><td>UFC fan experience with IBM watsonx</td><td>2024</td><td><a href="https://www.ibm.com/think/news/ufc-fan-experience-watsonx-ai" target="_blank">IBM Think</a></td></tr>
+        <tr><td>07</td><td>Unified Rules of MMA</td><td>2025</td><td><a href="https://www.ufc.com/unified-rules-mixed-martial-arts" target="_blank">UFC.com</a></td></tr>
+        <tr><td>08</td><td>AI in UFC Outcome Prediction (68%+ accuracy)</td><td>2024</td><td><a href="https://dl.acm.org/doi/fullHtml/10.1145/3696952.3696966" target="_blank">ACM Digital Library</a></td></tr>
+        <tr><td>09</td><td>Applications of AI in martial arts: A survey</td><td>2025</td><td><a href="https://journals.sagepub.com/doi/abs/10.1177/17543371241273827" target="_blank">SAGE Journals</a></td></tr>
+        <tr><td>10</td><td>Exploring Patterns in UFC Fight Outcomes</td><td>Aut. 2024</td><td><a href="https://www.stat.cmu.edu/capstoneresearch/fall2024/315files_f24/team11.html" target="_blank">Carnegie Mellon</a></td></tr>
+        <tr><td>11</td><td>Jabbr.ai — Site officiel</td><td>2022–2025</td><td><a href="https://jabbr.ai/" target="_blank">jabbr.ai</a></td></tr>
+        <tr><td>12</td><td>Jabbr.ai Secures €4.3M</td><td>Oct. 2025</td><td><a href="https://www.eu-startups.com/2025/10/backed-by-reddit-and-and-lyft-founders-danish-startup-jabbr-ai-raises-e4-3-million-to-bring-transparency-to-combat-sports/" target="_blank">EU-Startups</a></td></tr>
+        <tr><td>13</td><td>Jabbr raises €685K seed</td><td>Août 2023</td><td><a href="https://arcticstartup.com/jabbr-raises-e685k/" target="_blank">ArcticStartup</a></td></tr>
+        <tr><td>14</td><td>Could AI Revolutionize Combat Sports?</td><td>2024</td><td><a href="https://medium.com/aimonks/could-ai-revolutionize-combat-sports-exploring-jabbr-ai-ec003fd48e24" target="_blank">Medium</a></td></tr>
+        <tr><td>15</td><td>Limb biomechanics in combat sports: wearable sensors</td><td>2025</td><td><a href="https://www.frontiersin.org/journals/bioengineering-and-biotechnology/articles/10.3389/fbioe.2025.1663592/full" target="_blank">Frontiers Bioengineering</a></td></tr>
+        <tr><td>16</td><td>Sensor-enhanced wearables for injury prevention</td><td>2024</td><td><a href="https://www.sciencedirect.com/science/article/pii/S2665917424000308" target="_blank">ScienceDirect</a></td></tr>
+        <tr><td>17</td><td>Smart Wearable Tech for MMA</td><td>2024</td><td><a href="https://wholesale.rdxsports.com/blog/stay-ahead-of-the-curve-smart-wearable-tech-for-the-modern-mma-retailer/" target="_blank">RDX Sports</a></td></tr>
+        <tr><td>18</td><td>Top 10 Wearable Devices for Combat Athletes</td><td>2024</td><td><a href="https://www.getphysical.com/blog/top-10-wearable-devices-combat-athletes" target="_blank">GetPhysical</a></td></tr>
+        <tr><td>19</td><td>UFC Fighter Performance Statistics Dataset</td><td>2024</td><td><a href="https://www.opendatabay.com/data/dataset/70d37602-bed4-4350-a2ea-775f886bda1d" target="_blank">OpenDataBay</a></td></tr>
+        <tr><td>20</td><td>MMA.SOCIAL — Stats UFC</td><td>2025</td><td><a href="https://mma.social/stats/" target="_blank">MMA.Social</a></td></tr>
+        <tr><td>21</td><td>StatsFight — Live UFC Analytics</td><td>2025</td><td><a href="https://statsfight.com/analytics/" target="_blank">StatsFight</a></td></tr>
+        <tr><td>22</td><td>Advancements in VR for combat sports (PubMed)</td><td>Mars 2025</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/40110089/" target="_blank">PubMed</a></td></tr>
+        <tr><td>23</td><td>Advancements in VR for combat sports</td><td>Mars 2025</td><td><a href="https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2025.1563212/full" target="_blank">Frontiers Psychology</a></td></tr>
+        <tr><td>24</td><td>MMA Star Uses VR to Train</td><td>2024</td><td><a href="https://www.vrfitnessinsider.com/mma-star-uses-vr-to-train-for-real-fights/" target="_blank">VR Fitness Insider</a></td></tr>
+        <tr><td>25</td><td>Revolutionizing sports: next-gen wearables</td><td>2025</td><td><a href="https://journals.lww.com/jmso/fulltext/2025/01000/revolutionizing_sports__the_impact_of.3.aspx" target="_blank">Journal Medical Society</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+</body>
+</html>
